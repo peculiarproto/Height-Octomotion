@@ -4067,31 +4067,40 @@
  * User-defined buttons to run custom G-code.
  * Up to 25 may be defined.
  */
-//#define CUSTOM_USER_BUTTONS
+#define CUSTOM_USER_BUTTONS
 #if ENABLED(CUSTOM_USER_BUTTONS)
-  //#define BUTTON1_PIN -1
+  #define BUTTON1_PIN PB7
   #if PIN_EXISTS(BUTTON1)
     #define BUTTON1_HIT_STATE     LOW       // State of the triggered button. NC=LOW. NO=HIGH.
     #define BUTTON1_WHEN_PRINTING false     // Button allowed to trigger during printing?
-    #define BUTTON1_GCODE         "G28"
+    #define BUTTON1_GCODE         "M118 Button Pressed!"
     #define BUTTON1_DESC          "Homing"  // Optional string to set the LCD status
-  #endif
+    #define BUTTON1_PULLUP               // Enable internal pull-up resistor
+    #endif
 
-  //#define BUTTON2_PIN -1
+  #define BUTTON2_PIN PG14
   #if PIN_EXISTS(BUTTON2)
     #define BUTTON2_HIT_STATE     LOW
     #define BUTTON2_WHEN_PRINTING false
-    #define BUTTON2_GCODE         "M140 S" STRINGIFY(PREHEAT_1_TEMP_BED) "\nM104 S" STRINGIFY(PREHEAT_1_TEMP_HOTEND)
-    #define BUTTON2_DESC          "Preheat for " PREHEAT_1_LABEL
+    #define BUTTON2_GCODE         "PG14 Pushed"
+    #define BUTTON2_DESC          "PG14"
   #endif
 
-  //#define BUTTON3_PIN -1
+  #define BUTTON3_PIN PG15
   #if PIN_EXISTS(BUTTON3)
     #define BUTTON3_HIT_STATE     LOW
     #define BUTTON3_WHEN_PRINTING false
-    #define BUTTON3_GCODE         "M140 S" STRINGIFY(PREHEAT_2_TEMP_BED) "\nM104 S" STRINGIFY(PREHEAT_2_TEMP_HOTEND)
-    #define BUTTON3_DESC          "Preheat for " PREHEAT_2_LABEL
+    #define BUTTON3_GCODE         "PG15 Pushed"
+    #define BUTTON3_DESC          "PG15"
   #endif
+#endif
+
+#define BUTTON3_PIN PF7
+#if PIN_EXISTS(BUTTON3)
+  #define BUTTON3_HIT_STATE     LOW
+  #define BUTTON3_WHEN_PRINTING false
+  #define BUTTON3_GCODE         "PF7 Pushed"
+  #define BUTTON3_DESC          "PF7"
 #endif
 
 /**

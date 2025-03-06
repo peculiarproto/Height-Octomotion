@@ -54,14 +54,14 @@
 #define Z2_DIAG_PIN                         PG11  // Z2-STOP
 #define E0_DIAG_PIN                         PG12  // E0DET
 #define E1_DIAG_PIN                         PG13  // E1DET
-#define E2_DIAG_PIN                         PG14  // E2DET
-#define E3_DIAG_PIN                         PG15  // E3DET
+//#define E2_DIAG_PIN                         PG14  // E2DET
+//#define E3_DIAG_PIN                         PG15  // E3DET
 
 //
 // Z Probe (when not Z_MIN_PIN)
 //
 #ifndef Z_MIN_PROBE_PIN
-  #define Z_MIN_PROBE_PIN                   PB7
+  #define Z_MIN_PROBE_PIN                   pb7
 #endif
 
 //
@@ -147,8 +147,9 @@
 //
 #define FIL_RUNOUT_PIN                      PG12  // E0DET
 #define FIL_RUNOUT2_PIN                     PG13  // E1DET
-#define FIL_RUNOUT3_PIN                     PG14  // E2DET
-#define FIL_RUNOUT4_PIN                     PG15  // E3DET
+//#define FIL_RUNOUT3_PIN                     PG14  // E2DET
+//#define FIL_RUNOUT4_PIN                     PG15  // E3DET
+
 
 //
 // Power Supply Control
@@ -232,7 +233,7 @@
 #define TEMP_BED_PIN                        PF3   // TB
 #define TEMP_1_PIN                          PF5   // TH1
 #define TEMP_2_PIN                          PF6   // TH2
-#define TEMP_3_PIN                          PF7   // TH3
+//#define TEMP_3_PIN                          PF7   // TH3
 
 //
 // Heaters / Fans
@@ -252,7 +253,7 @@
 #define FAN2_PIN                            PD12  // Fan2
 #define FAN3_PIN                            PD13  // Fan3
 #define FAN4_PIN                            PD14  // Fan4
-#define FAN5_PIN                            PD15  // Fan5
+//#define FAN5_PIN                            PD15  // Fan5
 
 //
 // SD Support

@@ -20,6 +20,7 @@
  *
  */
 #pragma once
+#include "custom_gcode_strings.h"
 
 /**
  * Configuration_adv.h
@@ -3992,10 +3993,10 @@
  * Add G-codes M810-M819 to define and run G-code macros.
  * Macros are not saved to EEPROM.
  */
-//#define GCODE_MACROS
+#define GCODE_MACROS
 #if ENABLED(GCODE_MACROS)
-  #define GCODE_MACROS_SLOTS       5  // Up to 10 may be used
-  #define GCODE_MACROS_SLOT_SIZE  50  // Maximum length of a single macro
+  #define GCODE_MACROS_SLOTS       10  // Up to 10 may be used
+  #define GCODE_MACROS_SLOT_SIZE  500  // Maximum length of a single macro
 #endif
 
 /**
@@ -4073,8 +4074,8 @@
   #if PIN_EXISTS(BUTTON1)
     #define BUTTON1_HIT_STATE     LOW       // State of the triggered button. NC=LOW. NO=HIGH.
     #define BUTTON1_WHEN_PRINTING false     // Button allowed to trigger during printing?
-    #define BUTTON1_GCODE         "M118 Button Pressed!"
-    #define BUTTON1_DESC          "Homing"  // Optional string to set the LCD status
+    #define BUTTON1_GCODE         btn1Gcode
+    #define BUTTON1_DESC          "btn1Gcode"  // Optional string to set the LCD status
     #define BUTTON1_PULLUP               // Enable internal pull-up resistor
     #endif
 
@@ -4082,27 +4083,26 @@
   #if PIN_EXISTS(BUTTON2)
     #define BUTTON2_HIT_STATE     LOW
     #define BUTTON2_WHEN_PRINTING false
-    #define BUTTON2_GCODE         "PG14 Pushed"
-    #define BUTTON2_DESC          "PG14"
+    #define BUTTON2_GCODE         btn2Gcode
+    #define BUTTON2_DESC          "btn2Gcode"
   #endif
 
-  #define BUTTON3_PIN PG15
+  #define BUTTON3_PIN PF7
   #if PIN_EXISTS(BUTTON3)
     #define BUTTON3_HIT_STATE     LOW
     #define BUTTON3_WHEN_PRINTING false
-    #define BUTTON3_GCODE         "PG15 Pushed"
-    #define BUTTON3_DESC          "PG15"
+    #define BUTTON3_GCODE         btn3Gcode
+    #define BUTTON3_DESC          "btn3Gcode"
+  #endif
+
+  #define BUTTON4_PIN PG15
+  #if PIN_EXISTS(BUTTON4)
+    #define BUTTON4_HIT_STATE     LOW
+    #define BUTTON4_WHEN_PRINTING false
+    #define BUTTON4_GCODE         btn4Gcode
+    #define BUTTON4_DESC          "btn4Gcode"
   #endif
 #endif
-
-#define BUTTON3_PIN PF7
-#if PIN_EXISTS(BUTTON3)
-  #define BUTTON3_HIT_STATE     LOW
-  #define BUTTON3_WHEN_PRINTING false
-  #define BUTTON3_GCODE         "PF7 Pushed"
-  #define BUTTON3_DESC          "PF7"
-#endif
-
 /**
  * Host Action Commands
  *
